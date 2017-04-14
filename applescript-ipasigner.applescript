@@ -129,7 +129,7 @@ repeat
 		set progress description to "cp embedded.mobileprovision"
 		set progress additional description to "Codesigning " & ipaName
 		
-		set currentTab to do shell script ("cp " & provPath & " Payload/" & payloadList & "/embedded.mobileprovision") with administrator privileges
+		set currentTab to do shell script ("cp ~/Desktop/profile.mobileprovision Payload/" & payloadList & "/embedded.mobileprovision") with administrator privileges
 		-- repeat
 		-- 	delay 1
 		-- 	if not busy of currentTab then exit repeat
@@ -155,7 +155,7 @@ repeat
 		-- 	if not busy of currentTab then exit repeat
 		-- end repeat
 		
-		display dialog "Successfully signed " & ipaName & " as " & ipaNameSingle & "-resigned.ipa" buttons {"OK"} default button 1
+		display dialog "Successfully signed " & ipaName & " as " & ipaNameSingle & "-resigned.ipa under:" & return & "Macintosh HD/" buttons {"OK"} default button 1
 		
 		exit repeat
 	else if ipaTrueChal is false then
