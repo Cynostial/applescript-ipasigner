@@ -69,7 +69,7 @@ repeat
 		exit repeat
 	end if
 end repeat
-set certChal to display dialog "Signing Certificate:" default answer "iPhone Distribution: Rhett Rutledge (74FFDKA5T5)" buttons {"Continue"} default button 1
+set certChal to display dialog "Signing Certificate:" default answer "iPhone Developer: ABCDEFG (XXXXXXX)" buttons {"Continue"} default button 1
 set certName to text returned of certChal
 set provChal to display dialog "Provisioning Profile:" default answer provPathEnc buttons {"Continue"} default button 1
 set provPathEnc to text returned of provChal
@@ -99,7 +99,7 @@ repeat
 		set progress description to "Unzipping " & ipaName
 		set progress additional description to "Codesigning " & ipaName
 		
-		set currentTab to do shell script ("unzip " & folderPathNoHD & ipaName) with administrator privileges
+		set currentTab to do shell script ("unzip -o " & folderPathNoHD & ipaName) with administrator privileges
 		-- repeat
 		-- 	delay 1
 		-- 	if not busy of currentTab then exit repeat
